@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>bnr.baby</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpolygon points='16,2 28.1,9 28.1,23 16,30 3.9,23 3.9,9' fill='none' stroke='%23FFD700' stroke-width='2.5'/%3E%3C/svg%3E">
+<style>
+/* estate palette, inlined from surfaces/tokens.css (beehive-nature @ main) */
+:root{
+  --bg0:#07090b; --bg1:#0d1410; --bg2:#111a14; --well:#0a0f0b;
+  --ink:#e2efdb; --ink-hi:#eef7e9; --dim:#8a9a8a; --faint:#6f7f71;
+  --line:#243026; --line-hi:#37493c;
+  --gold:#FFD700; --leaf:#7ddf8f;
+  --glow-gold:0 0 14px rgba(255,215,0,.12);
+  --breath:3.4s; --ease:cubic-bezier(.2,.8,.2,1);
+}
+@media (prefers-reduced-motion:reduce){:root{--breath:0ms}}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{
+  background:radial-gradient(120% 90% at 50% 0%,var(--bg2) 0%,var(--bg1) 55%,var(--bg0) 100%);
+  color:var(--ink);
+  font-family:ui-monospace,"Cascadia Mono","SF Mono",Consolas,"IBM Plex Mono",monospace;
+  display:flex;align-items:center;justify-content:center;
+  padding:24px;
+}
+main{max-width:560px;width:100%;text-align:center}
+.hex{
+  width:30px;height:34px;margin:0 auto 26px;
+  background:var(--gold);
+  clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+  filter:drop-shadow(0 0 12px rgba(255,215,0,.35));
+  animation:breathe var(--breath) var(--ease) infinite;
+}
+@keyframes breathe{0%,100%{opacity:.6}50%{opacity:1}}
+h1{
+  font-size:clamp(22px,6vw,34px);font-weight:600;letter-spacing:.04em;
+  color:var(--ink-hi);word-break:break-all;
+}
+.coming{margin-top:14px;font-size:14px;line-height:1.6;color:var(--dim)}
+.hub{
+  display:inline-block;margin-top:26px;padding:11px 20px;
+  border:1px solid var(--line-hi);border-radius:8px;
+  font-size:13px;color:var(--gold);text-decoration:none;
+  transition:border-color 260ms var(--ease),box-shadow 260ms var(--ease);
+}
+.hub:hover{border-color:var(--gold);box-shadow:var(--glow-gold)}
+.hub:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.micro{margin-top:34px;font-size:9.5px;letter-spacing:.08em;color:var(--faint)}
+</style>
+</head>
+<body>
+<main>
+  <div class="hex" aria-hidden="true"></div>
+  <h1>bnr.baby</h1>
+  <p class="coming">This front door is claimed for the estate. What opens here is not yet announced.</p>
+  <a class="hub" href="https://skaists.dev/">the live hub &rarr; skaists.dev</a>
+  <p class="micro">an estate front door &middot; claimed 2026-08-26</p>
+</main>
+</body>
+</html>
